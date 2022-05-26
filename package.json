@@ -1,0 +1,26 @@
+{
+  "name": "@nameless-web3-project/backend",
+  "version": "1.0.0",
+  "description": "The Nameless Web3 Project Inc. monolith that handles the stuff and gets things done for us with the power of Ethereum and 0x Protocol.",
+  "main": "dist/index.js",
+  "repository": "git@github.com:nameless-web3-project/backend.git",
+  "author": "Leonardo Lemos <leo.lemos.ds@icloud.com>",
+  "license": "PROPERTY",
+  "private": true,
+  "devDependencies": {
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/node": "^17.0.35",
+    "eslint": "^8.16.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.2"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
+}
