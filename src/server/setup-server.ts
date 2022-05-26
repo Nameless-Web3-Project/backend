@@ -1,0 +1,38 @@
+import express from 'express'
+import bodyParser from 'body-parser'
+
+import getPingController from '../controllers/get-ping-controller'
+import loadEnvironment from './load-environment'
+
+function _beforeSetupServer() {
+  loadEnvironment()
+}
+
+function _afterSetupServer() {
+  // todo: implement here what would be run after the server is set up.
+}
+
+function setupServer() {
+  _beforeSetupServer()
+
+  const app = express()
+
+  app.use(bodyParser.json({ limit: '50mb' }))
+  app.use(bodyParser.urlencoded({ extended: true }))
+
+  app.get('/ping', getPingController())
+
+  const port = process.env.PORT ? Number(process.env.PORT) : 8080
+
+  app.listen(port, () => {
+    // We log it in any environment (either development or production) because the
+    // output is certainly useful for debugging purposes, so then we set up a
+    // production environment, we'll know whether the server has correctly started
+    // or not.
+    console.log(`[server] listening on port ${port}`)
+
+    _afterSetupServer()
+  })
+}
+
+export default setupServer
