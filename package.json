@@ -35,6 +35,8 @@
   },
   "scripts": {
     "dev": "ts-node-dev ./src/main.ts --transpileOnly",
-    "test": "jest src"
+    "test": "jest src",
+    "compile": "tsc",
+    "start": "node ./build/main.js"
   }
 }
